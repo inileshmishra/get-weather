@@ -1,0 +1,20 @@
+<div>
+    <section>
+        <h3>Get Weather Information</h3>
+        <label>
+            City:
+            <input type="text" [(ngModel)]="cityName" (ngModelChange)="getData()">
+        </label>
+    </section>
+
+    <section>
+        <div *ngIf="cityDetail && hideDeatils">
+            <p>{{cityDetail.temperature}}</p>
+            <p>{{cityDetail.wind}}</p>
+            <p>{{cityDetail.humidity}}</p>
+        </div>
+        <div *ngIf="showNoResult">
+            No Result Found!
+        </div>
+    </section>
+</div>
